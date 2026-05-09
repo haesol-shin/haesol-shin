@@ -22,23 +22,23 @@
 <!-- "What I'm Up To" Section -->
 <h4>⚡ What I'm Up To</h4>
 <ul>
-  <li>Working on <a href="https://github.com/thisisthepy/toolchain">Python Multiplatform Toolchain Project</a> with the <a href="https://github.com/thisisthepy">Thisisthepy Group</a>.</li>
-  <li>Working on <a href="https://github.com/thisisthepy/PyREPL">PyREPL Project</a> with the <a href="https://github.com/thisisthepy">Thisisthepy Group</a>.</li>
-  <li>Pursuing a Bachelor's Degree at Chungnam National University.</li>
-  <li>Serving as Chief Learning Officer in the <a href="https://github.com/dAiv-CNU">CNU dAiv AI Community</a>.</li>
+  <li>Researching Text-to-Speech (TTS) and Generative AI at <a href="https://sites.google.com/view/cnudolab/home">DO Lab</a> (Prof. SangMook Kim).</li>
+  <li>Core developer of <a href="https://github.com/thisisthepy/PyREPL">PyREPL</a> and <a href="https://github.com/thisisthepy/toolchain">toolchain</a> at the <a href="https://github.com/thisisthepy">Thisisthepy Group</a>.</li>
+  <li>Pursuing a Bachelor's Degree in AI at Chungnam National University (expected Feb 2028).</li>
 </ul>
 
 <!-- "Projects Overview" Section -->
 <h4>🚀 Projects Overview</h4>
 <ul>
+  <li><a href="https://github.com/latentforge/VoiceStudio">VoiceStudio</a>: Unified Toolkit for Text-Style Prompted Speech Synthesis and Voice Editing</li>
   <li><a href="https://github.com/thisisthepy/toolchain">toolchain</a>: Python Multiplatform Build Plugin/Tool</li>
   <li><a href="https://github.com/thisisthepy/PyREPL">PyREPL</a>: UI-Enabled Python REPL for Android/iOS/Desktop</li>
 </ul>
 
 <!-- "Papers & Research" Section -->
-<h4>📜 Papers & Research</h4>
+<h4>📜 Papers &amp; Research</h4>
 <ul>
-  <li><img src="https://github.com/haesol1013/haesol1013/blob/main/img/hmm.gif" height="24" /></li>
+  <li>Conducting research on Text-to-Speech (TTS) and Generative AI at DO Lab.</li>
 </ul>
 
 <!-- "Awards" Section -->
@@ -46,29 +46,23 @@
 <ul>
   <li>
     <a href="https://www.oss.kr/dev_competition_activities/show/56abffeb-ce35-49d7-bba3-ebbf4367170f">
-      2024 Open SW Developer Competiton: Student Division Second Prize (정보통신산업진흥원 원장상)
+      2024 Open Source Software Developer Competition — Gold Award (NIPA Director's Award)
     </a>
   </li>
+  <li>2025 AI Champion Competition — Selected (100 Research Teams) (Ministry of Science and ICT / IITP)</li>
 </ul>
 
 <!-- "Favorite Tools" Section -->
 <h2>🛠️ Favorite Tools</h2>
 
-<!-- Programming Languages -->
-<h3>Programming Languages</h3>
+<!-- Languages & Frameworks -->
+<h3>Languages &amp; Frameworks</h3>
 <div style="white-space: nowrap;">
   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/kotlin-7F52FF?style=for-the-badge&amp;logo=kotlin&amp;logoColor=white" alt="Kotlin">
-  <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&amp;logoColor=white" alt="Java">
-  <img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&amp;logo=c&amp;logoColor=white" alt="C">
-</div>
-
-<!-- Frameworks and Libraries -->
-<h3>Frameworks and Libraries</h3>
-<div style="white-space: nowrap;">
   <img src="https://img.shields.io/badge/pytorch-EE4C2C?style=for-the-badge&amp;logo=pytorch&amp;logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/fastapi-009688?style=for-the-badge&amp;logo=fastapi&amp;logoColor=white" alt="FastAPI">
-  <img src="https://img.shields.io/badge/selenium-43B02A?style=for-the-badge&amp;logo=selenium&amp;logoColor=white" alt="Selenium">
+  <a href="https://huggingface.co/haesol-shin" target="_blank">
+    <img src="https://img.shields.io/badge/huggingface-FFD21E?style=for-the-badge&amp;logo=huggingface&amp;logoColor=black" alt="HuggingFace">
+  </a>
 </div>
 
 <!-- Software and Tools -->
@@ -76,9 +70,10 @@
 <div style="white-space: nowrap;">
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&amp;logo=git&amp;logoColor=white" alt="Git">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub">
-  <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&amp;logo=gradle&amp;logoColor=white" alt="Gradle">
+  <img src="https://img.shields.io/badge/vscode-007ACC?style=for-the-badge&amp;logo=visualstudiocode&amp;logoColor=white" alt="VS Code">
   <img src="https://img.shields.io/badge/intellij%20idea-000000?style=for-the-badge&amp;logo=intellijidea&amp;logoColor=white" alt="IntelliJ IDEA">
-  <img src="https://img.shields.io/badge/jupyter-F37626?style=for-the-badge&amp;logo=jupyter&amp;logoColor=white" alt="Jupyter">
+  <img src="https://img.shields.io/badge/codex-412991?style=for-the-badge&amp;logo=openai&amp;logoColor=white" alt="Codex">
+  <img src="https://img.shields.io/badge/claude%20code-D4763B?style=for-the-badge&amp;logo=anthropic&amp;logoColor=white" alt="Claude Code">
 </div>
 
 <!-- Operating Systems & Platforms -->
@@ -95,8 +90,8 @@
   <a href="mailto:haesol.research@gmail.com">
     <img src="https://img.shields.io/badge/gmail-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Gmail">
   </a>
-  <a href="https://www.instagram.com/sry.xiii" target="_blank">
-    <img src="https://img.shields.io/badge/instagram-FF0069?style=for-the-badge&amp;logo=instagram&amp;logoColor=white" alt="Instagram">
+  <a href="https://www.linkedin.com/in/haesol-shin/" target="_blank">
+    <img src="https://img.shields.io/badge/linkedin-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn">
   </a>
 </div>
 

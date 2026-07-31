@@ -33,6 +33,7 @@
 <h4>🚀 Projects Overview</h4>
 <!-- BEGIN:projects -->
 <ul>
+  <li><a href="https://github.com/LatentForge/voicestudio">VoiceStudio</a>: Unified toolkit for text-style prompted speech synthesis and voice editing</li>
   <li><a href="https://github.com/thisisthepy/PyREPL">PyREPL</a>: UI-enabled Python REPL for Android, iOS, and desktop environments</li>
   <li><a href="https://github.com/thisisthepy/pmm-toolchain">toolchain</a>: Python multiplatform build plugin/tool for Kotlin Multiplatform Mobile workflows</li>
 </ul>

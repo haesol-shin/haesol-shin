@@ -149,23 +149,22 @@ projects:
     role: "Core Developer"
     description: "UI-enabled Python REPL for Android, iOS, and desktop environments."
     url: "https://github.com/thisisthepy/PyREPL"
-    importance: 1
+    importance: 2
     category: software
 
   - name: "toolchain"
     role: "Core Developer"
     description: "Python multiplatform build plugin/tool for Kotlin Multiplatform Mobile workflows."
     url: "https://github.com/thisisthepy/pmm-toolchain"
-    importance: 2
+    importance: 3
     category: software
 
   - name: "VoiceStudio"
-    role: "Contributor"
+    role: "Maintainer"
     description: "Unified toolkit for text-style prompted speech synthesis and voice editing."
     url: "https://github.com/LatentForge/voicestudio"
-    importance: 3
+    importance: 1
     category: research
-    channels: [homepage]   # Homepage project list only, not shown in README
 
 # ----------------------------------------------------------------------------
 # Awards (recorded only here — activity bullets describe work, not outcomes,

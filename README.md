@@ -21,36 +21,42 @@
 
 <!-- "What I'm Up To" Section -->
 <h4>⚡ What I'm Up To</h4>
+<!-- BEGIN:up-to -->
 <ul>
-  <li>Researching Text-to-Speech (TTS) and Generative AI at <a href="https://sites.google.com/view/cnudolab/home">DO Lab</a> (Prof. SangMook Kim).</li>
+  <li>Researching Text-to-Speech (TTS), Speech Synthesis, Generative AI at <a href="https://sites.google.com/view/cnudolab/home">DO Lab</a> (Prof. Sangmook Kim).</li>
   <li>Core developer of <a href="https://github.com/thisisthepy/PyREPL">PyREPL</a> and <a href="https://github.com/thisisthepy/toolchain">toolchain</a> at the <a href="https://github.com/thisisthepy">Thisisthepy Group</a>.</li>
-  <li>Pursuing a Bachelor's Degree in AI at Chungnam National University (expected Feb 2028).</li>
+  <li>Pursuing a Bachelor's Degree in AI at Chungnam National University (expected Feb. 2028).</li>
 </ul>
+<!-- END:up-to -->
 
 <!-- "Projects Overview" Section -->
 <h4>🚀 Projects Overview</h4>
+<!-- BEGIN:projects -->
 <ul>
-  <li><a href="https://github.com/latentforge/VoiceStudio">VoiceStudio</a>: Unified Toolkit for Text-Style Prompted Speech Synthesis and Voice Editing</li>
-  <li><a href="https://github.com/thisisthepy/toolchain">toolchain</a>: Python Multiplatform Build Plugin/Tool</li>
-  <li><a href="https://github.com/thisisthepy/PyREPL">PyREPL</a>: UI-Enabled Python REPL for Android/iOS/Desktop</li>
+  <li><a href="https://github.com/thisisthepy/PyREPL">PyREPL</a>: UI-enabled Python REPL for Android, iOS, and desktop environments</li>
+  <li><a href="https://github.com/thisisthepy/pmm-toolchain">toolchain</a>: Python multiplatform build plugin/tool for Kotlin Multiplatform Mobile workflows</li>
 </ul>
+<!-- END:projects -->
 
 <!-- "Papers & Research" Section -->
 <h4>📜 Papers &amp; Research</h4>
+<!-- BEGIN:research -->
 <ul>
-  <li>Conducting research on Text-to-Speech (TTS) and Generative AI at DO Lab.</li>
+  <li>Conducting research on Text-to-Speech (TTS), Speech Synthesis, Generative AI at DO Lab.</li>
 </ul>
+<!-- END:research -->
 
 <!-- "Awards" Section -->
 <h4>🏆 Awards</h4>
+<!-- BEGIN:awards -->
 <ul>
-  <li>
-    <a href="https://www.oss.kr/dev_competition_activities/show/56abffeb-ce35-49d7-bba3-ebbf4367170f">
-      2024 Open Source Software Developer Competition — Gold Award (NIPA Director's Award)
-    </a>
-  </li>
-  <li>2025 AI Champion Competition — Selected (100 Research Teams) (Ministry of Science and ICT / IITP)</li>
+  <li>2024 Open Source Developers Competition — Student Division — Gold Prize (Director's Award) (Ministry of Science and ICT (MSIT) / NIPA)</li>
+  <li>2025 AI Champion Competition — Selected — Top 100 Teams (Ministry of Science and ICT (MSIT) / IITP)</li>
+  <li>2026 AI Champion Competition — Selected — Top 100 Teams (ongoing) (Ministry of Science and ICT (MSIT) / IITP)</li>
+  <li>Korea Computer Congress (KCC) 2026 — Best Paper Award (Korean Institute of Information Scientists and Engineers (KIISE))</li>
+  <li>KT Group Hope Sharing Foundation — Selected — KT Digital Talent Scholarship (KT Corporation)</li>
 </ul>
+<!-- END:awards -->
 
 <!-- "Favorite Tools" Section -->
 <h2>🛠️ Favorite Tools</h2>
@@ -86,12 +92,14 @@
 
 <!-- "Contact Me" Section -->
 <h2>📪 Contact Me</h2>
+<!-- BEGIN:contact -->
 <div align="left">
-  <a href="mailto:haesol.research@gmail.com">
+  <a href="mailto:haesol.me@gmail.com">
     <img src="https://img.shields.io/badge/gmail-EA4335?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Gmail">
   </a>
   <a href="https://www.linkedin.com/in/haesol-shin/" target="_blank">
     <img src="https://img.shields.io/badge/linkedin-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn">
   </a>
 </div>
+<!-- END:contact -->
 

@@ -1,0 +1,226 @@
+# ============================================================================
+# resume.yaml — Haesol Shin, SSoT (Single Source of Truth)
+# ============================================================================
+# This is the only file where facts get edited. Changing career/awards/
+# projects/education info happens here, and nowhere else.
+# README.md, cv.yml, and resume.json are all generated from this file by
+# generate.py — do not edit them directly.
+#
+# `channels` field: controls where an entry is shown.
+#   If omitted, the default is "show everywhere" (readme, resume, homepage).
+#   Only add it when you want to include/exclude an entry from a specific channel.
+#   Valid values: readme (GitHub profile) / resume (docx resume, reference only) /
+#                 homepage (al-folio site)
+#
+# Usage: run `python generate.py` to regenerate README.md's fact blocks,
+# cv.yml, and resume.json.
+# ============================================================================
+
+schema_version: 2.0
+last_updated: "2026-07-31"
+
+# ----------------------------------------------------------------------------
+# Basics
+# ----------------------------------------------------------------------------
+basics:
+  name_en: "Haesol Shin"
+  name_ko: "신해솔"
+  email: "haesol.me@gmail.com"      # Unified contact as of 2026-07-31 (legacy: haesol.research@gmail.com, not used in new material)
+  location:
+    city: "Daejeon"
+    country: "South Korea"
+  headline: "Undergraduate AI Researcher @ CNU | TTS · Generative AI · Agentic Systems | Open Source Contributor"
+  summary: >
+    Undergraduate student majoring in Artificial Intelligence at Chungnam National University.
+    Undergraduate research assistant at DOLAB (Prof. Sangmook Kim), interested in
+    Text-to-Speech, speech synthesis, controllable speech generation, and generative AI.
+    Also actively exploring AI agents and agentic workflows, including contributing to
+    open-source AI coding agent projects.
+  research_interests:
+    - "Text-to-Speech and speech synthesis"
+    - "Controllable and style-consistent speech generation"
+    - "Voice editing and voice style adaptation"
+  links:
+    github: "https://github.com/haesol-shin"
+    homepage: "https://haesol-shin.github.io"
+    linkedin: "https://www.linkedin.com/in/haesol-shin/"
+    huggingface: "https://huggingface.co/haesol-shin"
+
+# ----------------------------------------------------------------------------
+# Education
+# ----------------------------------------------------------------------------
+education:
+  - institution: "Chungnam National University"
+    institution_ko: "충남대학교"
+    degree: "B.S. — Artificial Intelligence"
+    degree_ko: "인공지능학과 학사"
+    start: "2024-03"
+    end: "2028-02"
+    status: "expected"
+
+# ----------------------------------------------------------------------------
+# Research experience
+# ----------------------------------------------------------------------------
+research_experience:
+  - id: exp-dolab
+    org: "DOLAB (Data Optimization Lab), Chungnam National University"
+    org_ko: "충남대학교 DOLAB"
+    advisor: "Prof. Sangmook Kim"
+    role: "Undergraduate Researcher"
+    role_ko: "학부연구생"
+    start: "2025-09"
+    end: "present"
+    topic: "Text-to-Speech (TTS), Speech Synthesis, Generative AI"
+    bullets:
+      - text: >
+          First-authored "Analyzing and Improving Voice Consistency in Voice Design TTS,"
+          accepted to the Korea Computer Congress (KCC) 2026 as a Regular Track oral presentation.
+      - text: "Studied speaker identity drift in natural-language-guided TTS; designed a training pipeline with special conditioning tokens and teacher-forcing-based consistency loss."
+      - text: "Built a reproducible benchmark dataset; evaluated voice consistency via generation-to-generation cosine similarity of speaker embeddings."
+
+# ----------------------------------------------------------------------------
+# Open-source / development experience (own projects)
+# ----------------------------------------------------------------------------
+open_source_experience:
+  - id: exp-thisisthepy
+    org: "Thisisthepy Group"
+    role: "Core Developer"
+    start: "2024-07"
+    end: "present"
+    bullets:
+      - text: "Built the REPL UI and rendering layer for PyREPL, a cross-platform Python REPL for Android, iOS, and Desktop."
+      - text: "Integrated the CPython embedding API with Kotlin Multiplatform to run a native Python runtime on Android/iOS from a shared codebase."
+      - text: "Implemented a custom Jupyter kernel, embedding a Jupyter Notebook environment in the mobile app so code cells interact directly with live UI components."
+      - text: "Core developer of toolchain, a Python multiplatform build plugin for Kotlin Multiplatform Mobile workflows."
+
+# ----------------------------------------------------------------------------
+# Open-source contributions (not own project — contributed to external projects)
+# ----------------------------------------------------------------------------
+open_source_contributions:
+  - id: contrib-gajae-code
+    project: "Gajae Code (gjc)"
+    project_url: "https://github.com/Yeachan-Heo/gajae-code"
+    description: "Open-source AI coding agent"
+    role: "Contributor"
+    date: "2026-07"
+    bullets:
+      - text: >
+          Diagnosed and fixed a Windows-specific session tombstone reconciliation bug
+          causing resume/delete failures; added regression tests; merged upstream.
+    channels: [resume, homepage]   # Not shown in README (too granular for a one-line entry there)
+
+# ----------------------------------------------------------------------------
+# Leadership / education
+# ----------------------------------------------------------------------------
+leadership:
+  - id: exp-daiv
+    org: "CNU dAiv"
+    org_ko: "충남대학교 인공지능학과 학술동아리 dAiv"
+    role: "Chief Learning Officer (Education Director)"
+    role_ko: "교육부장"
+    club_size: "80+ members"        # Total club size
+    education_size: "~50 members"   # Curriculum audience size
+    start: "2025-01"
+    end: "2025-12"
+    bullets:
+      - text: "Designed and delivered a semester-long AI curriculum (Git → ANN → sequence modeling → Transformer → Reinforcement Learning → Self-Supervised Learning) for ~50 members."
+      - text: "Organized an internal Self-Supervised Learning competition using Tiny ImageNet, giving members hands-on experience with the full pre-train → fine-tune research workflow."
+
+# ----------------------------------------------------------------------------
+# Scholarships / industry-academia projects
+# ----------------------------------------------------------------------------
+scholarships:
+  - id: exp-kt
+    org: "KT Corporation (Korea Telecom) / KT Group Hope Sharing Foundation"
+    role: "Digital Talent Scholar"
+    start: "2026-03"
+    end: "2028-02"
+    bullets:
+      - text: >
+          Selected for the KT Digital Talent Scholarship Program; conducting a 1-year AI project
+          "Continuous-Driving Safe Route Search Service for Personal Mobility (PM) Devices"
+          with industry networking.
+
+# ----------------------------------------------------------------------------
+# Projects (open-source / research software)
+# ----------------------------------------------------------------------------
+projects:
+  - name: "PyREPL"
+    role: "Core Developer"
+    description: "UI-enabled Python REPL for Android, iOS, and desktop environments."
+    url: "https://github.com/thisisthepy/PyREPL"
+    importance: 1
+    category: software
+
+  - name: "toolchain"
+    role: "Core Developer"
+    description: "Python multiplatform build plugin/tool for Kotlin Multiplatform Mobile workflows."
+    url: "https://github.com/thisisthepy/pmm-toolchain"
+    importance: 2
+    category: software
+
+  - name: "VoiceStudio"
+    role: "Contributor"
+    description: "Unified toolkit for text-style prompted speech synthesis and voice editing."
+    url: "https://github.com/LatentForge/voicestudio"
+    importance: 3
+    category: research
+    channels: [homepage]   # Homepage project list only, not shown in README
+
+# ----------------------------------------------------------------------------
+# Awards (recorded only here — activity bullets describe work, not outcomes,
+# to avoid duplicating achievements across sections)
+#
+# English wording source confidence:
+#   [VERIFIED]   = confirmed via third-party (institution/university) English usage
+#   [TRANSLATED] = no confirmed official English name; descriptive translation for
+#                  understanding — re-verify original wording before official submissions
+# ----------------------------------------------------------------------------
+awards:
+  - year: 2024
+    date: "2024-12"
+    title: "Gold Prize (Director's Award)"
+    event: "2024 Open Source Developers Competition — Student Division"   # [VERIFIED] confirmed via university lab news post
+    org: "Ministry of Science and ICT (MSIT) / NIPA"
+    scope: national
+
+  - year: 2025
+    title: "Selected — Top 100 Teams"
+    event: "2025 AI Champion Competition"   # [TRANSLATED] "AI CHAMPION" confirmed in press coverage; full event name is a descriptive translation
+    org: "Ministry of Science and ICT (MSIT) / IITP"
+    scope: national
+
+  - year: 2026
+    title: "Selected — Top 100 Teams (ongoing)"
+    event: "2026 AI Champion Competition"   # [TRANSLATED]
+    org: "Ministry of Science and ICT (MSIT) / IITP"
+    scope: national
+
+  - year: 2026
+    title: "Best Paper Award"
+    event: "Korea Computer Congress (KCC) 2026"   # [TRANSLATED] "KCC" is a widely-used English abbreviation; full event name is a descriptive translation
+    org: "Korean Institute of Information Scientists and Engineers (KIISE)"
+    scope: national
+    paper: "Analyzing and Improving Voice Consistency in Voice Design TTS"
+
+  - year: 2026
+    date: "2026-03"
+    title: "Selected — KT Digital Talent Scholarship"   # [TRANSLATED]
+    event: "KT Group Hope Sharing Foundation"
+    org: "KT Corporation"
+    scope: national
+
+# ----------------------------------------------------------------------------
+# Training / completed programs
+# ----------------------------------------------------------------------------
+training: []
+# LG Aimers 8th Cohort — status (participant vs. completed) pending confirmation, add once confirmed
+
+# ----------------------------------------------------------------------------
+# Skills
+# ----------------------------------------------------------------------------
+skills:
+  languages: ["Python", "Kotlin", "Java", "C", "C++"]
+  frameworks: ["PyTorch", "Transformers"]
+  tools: ["Git / GitHub", "Linux", "Gradle", "FastAPI"]
+  interests: ["AI Agents", "Agentic Workflows", "Speech Synthesis", "Generative AI"]

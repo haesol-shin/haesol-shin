@@ -314,6 +314,20 @@ def build_cv_yml(data):
     if award_contents:
         cv.append({"title": "Awards", "type": "time_table", "contents": award_contents})
 
+    # Skills
+    sk = data.get("skills", {})
+    skill_contents = []
+    if sk.get("languages"):
+        skill_contents.append({"title": "Languages", "items": sk["languages"]})
+    if sk.get("frameworks"):
+        skill_contents.append({"title": "Frameworks", "items": sk["frameworks"]})
+    if sk.get("tools"):
+        skill_contents.append({"title": "Tools", "items": sk["tools"]})
+    if sk.get("interests"):
+        skill_contents.append({"title": "Interests", "items": sk["interests"]})
+    if skill_contents:
+        cv.append({"title": "Skills", "type": "nested_list", "contents": skill_contents})
+
     return cv
 
 

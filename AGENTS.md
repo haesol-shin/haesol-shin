@@ -23,6 +23,7 @@ Badge images use the `shields.io` `for-the-badge` style. GIF assets are referenc
 - Preserve the raw-HTML structure outside the markers; mixing Markdown headings into the existing layout will break alignment.
 - Badge URLs follow the pattern `https://img.shields.io/badge/<label>-<color>?style=for-the-badge&logo=<name>&logoColor=white`.
 - The contact email is `haesol.me@gmail.com`.
+- `generate.py` also writes to the `haesol-shin.github.io` checkout. It resolves that path via `--homepage-dir`, then the `HAESOL_HOMEPAGE_DIR` env var, then a sibling-directory guess (`../haesol-shin.github.io`) as a last resort — see the script's docstring.
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 

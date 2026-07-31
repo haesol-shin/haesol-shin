@@ -5,6 +5,13 @@ generate.py — Regenerate README.md, cv.yml, and resume.json from resume.yaml.
 resume.yaml is the single source of truth (SSoT). This script never reads
 from or writes to any other file as a source of facts.
 
+Homepage directory resolution order:
+    1. --homepage-dir CLI argument
+    2. HAESOL_HOMEPAGE_DIR environment variable
+    3. Fallback: a sibling directory named "haesol-shin.github.io"
+       (assumes this repo and the homepage repo are checked out next to
+       each other — not guaranteed on every machine, hence the override options)
+
 Usage:
     python generate.py [--homepage-dir PATH] [--dry-run]
 
@@ -16,6 +23,7 @@ Outputs:
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -25,9 +33,20 @@ import yaml
 SCRIPT_DIR = Path(__file__).resolve().parent
 RESUME_YAML = SCRIPT_DIR / "resume.yaml"
 README_PATH = SCRIPT_DIR / "README.md"
-DEFAULT_HOMEPAGE_DIR = SCRIPT_DIR.parent / "haesol-shin.github.io"
+FALLBACK_HOMEPAGE_DIR = SCRIPT_DIR.parent / "haesol-shin.github.io"
 
 MARKER_RE_TEMPLATE = r"(<!--\s*BEGIN:{name}\s*-->)(.*?)(<!--\s*END:{name}\s*-->)"
+
+
+def resolve_homepage_dir(cli_arg):
+    """Resolution order: --homepage-dir > HAESOL_HOMEPAGE_DIR env var >
+    sibling-directory fallback. Returns (path, source_label) for logging."""
+    if cli_arg is not None:
+        return cli_arg, "--homepage-dir"
+    env_val = os.environ.get("HAESOL_HOMEPAGE_DIR")
+    if env_val:
+        return Path(env_val), "HAESOL_HOMEPAGE_DIR env var"
+    return FALLBACK_HOMEPAGE_DIR, "fallback (sibling directory guess)"
 
 
 def load_resume():
@@ -419,8 +438,10 @@ def build_resume_json(data):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--homepage-dir", type=Path, default=DEFAULT_HOMEPAGE_DIR,
-                         help="Path to haesol-shin.github.io checkout")
+    parser.add_argument("--homepage-dir", type=Path, default=None,
+                         help="Path to haesol-shin.github.io checkout "
+                              "(falls back to HAESOL_HOMEPAGE_DIR env var, "
+                              "then a sibling-directory guess)")
     parser.add_argument("--dry-run", action="store_true",
                          help="Print what would change without writing files")
     args = parser.parse_args()
@@ -442,7 +463,8 @@ def main():
         print(f"  {verb} README.md <!-- BEGIN:{name} --> block")
 
     # cv.yml / resume.json (homepage)
-    homepage_dir = args.homepage_dir
+    homepage_dir, homepage_dir_source = resolve_homepage_dir(args.homepage_dir)
+    print(f"Homepage dir: {homepage_dir} (source: {homepage_dir_source})")
     cv_yml_path = homepage_dir / "_data" / "cv.yml"
     resume_json_path = homepage_dir / "assets" / "json" / "resume.json"
 

@@ -248,6 +248,11 @@ def _date_range(start, end):
 
 
 def build_cv_yml(data):
+    """NOTE: al-folio's cv.liquid layout ignores this file entirely whenever
+    `_config.yml`'s `jekyll_get_json` loads `site.data.resume` (which it does
+    here, from assets/json/resume.json). This function is kept for parity /
+    fallback in case that config is ever removed, but the live /cv page
+    currently renders from build_resume_json(), not this function."""
     cv = []
 
     # General information
@@ -313,20 +318,6 @@ def build_cv_yml(data):
         })
     if award_contents:
         cv.append({"title": "Awards", "type": "time_table", "contents": award_contents})
-
-    # Skills
-    sk = data.get("skills", {})
-    skill_contents = []
-    if sk.get("languages"):
-        skill_contents.append({"title": "Languages", "items": sk["languages"]})
-    if sk.get("frameworks"):
-        skill_contents.append({"title": "Frameworks", "items": sk["frameworks"]})
-    if sk.get("tools"):
-        skill_contents.append({"title": "Tools", "items": sk["tools"]})
-    if sk.get("interests"):
-        skill_contents.append({"title": "Interests", "items": sk["interests"]})
-    if skill_contents:
-        cv.append({"title": "Skills", "type": "nested_list", "contents": skill_contents})
 
     return cv
 

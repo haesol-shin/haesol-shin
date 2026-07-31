@@ -219,7 +219,7 @@ training: []
 # Skills
 # ----------------------------------------------------------------------------
 skills:
-  languages: ["Python", "Kotlin", "Java", "C", "C++"]
+  languages: ["Python", "Kotlin", "Java", "C/C++"]
   frameworks: ["PyTorch", "Transformers"]
   tools: ["Git / GitHub", "Linux", "Gradle", "FastAPI"]
   interests: ["AI Agents", "Agentic Workflows", "Speech Synthesis", "Generative AI"]

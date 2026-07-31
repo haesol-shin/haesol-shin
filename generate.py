@@ -392,11 +392,14 @@ def build_resume_json(data):
 
     skills = []
     sk = data.get("skills", {})
-    if sk.get("languages") or sk.get("frameworks"):
-        skills.append({
-            "name": "Software",
-            "keywords": (sk.get("languages", []) + sk.get("frameworks", [])),
-        })
+    if sk.get("languages"):
+        skills.append({"name": "Languages", "keywords": sk["languages"]})
+    if sk.get("frameworks"):
+        skills.append({"name": "Frameworks", "keywords": sk["frameworks"]})
+    if sk.get("tools"):
+        skills.append({"name": "Tools", "keywords": sk["tools"]})
+    if sk.get("interests"):
+        skills.append({"name": "Interests", "keywords": sk["interests"]})
 
     return {
         "basics": {

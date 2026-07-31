@@ -52,7 +52,8 @@ basics:
 education:
   - institution: "Chungnam National University"
     institution_ko: "충남대학교"
-    degree: "B.S. — Artificial Intelligence"
+    degree_type: "B.S."
+    area: "Artificial Intelligence"
     degree_ko: "인공지능학과 학사"
     start: "2024-03"
     end: "2028-02"

@@ -203,7 +203,7 @@ def render_about_facts(data):
         if not in_channel(edu, "homepage"):
             continue
         status = " (expected)" if edu.get("status") == "expected" else ""
-        lines.append(f"- **{edu['degree'].replace('B.S. —', 'B.S. in').strip()}**, {edu['institution']}  ")
+        lines.append(f"- **{edu['degree_type']} in {edu['area']}**, {edu['institution']}  ")
         lines.append(f"  {_date_range(edu['start'], edu['end'])}{status}")
     lines.append("")
 
@@ -247,7 +247,7 @@ def _format_month_year(ym):
     """'2026-03' -> 'Mar. 2026'; 'present' -> 'Present'."""
     if not ym or ym.lower() == "present":
         return "Present"
-    months = ["Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.",
+    months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.",
               "Jul.", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."]
     try:
         year, month = ym.split("-")
@@ -289,7 +289,7 @@ def build_cv_yml(data):
     for edu in data.get("education", []):
         status = " (expected)" if edu.get("status") == "expected" else ""
         edu_contents.append({
-            "title": edu["degree"],
+            "title": f"{edu['degree_type']} — {edu['area']}",
             "institution": edu["institution"],
             "year": _date_range(edu["start"], edu["end"]) + status,
         })
@@ -355,10 +355,10 @@ def build_resume_json(data):
     for edu in data.get("education", []):
         education.append({
             "institution": edu["institution"],
-            "area": edu["degree"].split("—")[-1].strip(),
-            "studyType": edu["degree"].split("—")[0].strip(),
+            "area": edu["area"],
+            "studyType": edu["degree_type"],
             "startDate": f"{edu['start']}-01",
-            "endDate": f"{edu['end']}-01",
+            "endDate": "Present" if edu["end"] == "present" else f"{edu['end']}-01",
         })
 
     work = []
@@ -452,6 +452,9 @@ def main():
     n_awards = len(data.get("awards", []))
     n_projects = len(data.get("projects", []))
     print(f"Parsed resume.yaml ({n_exp} experience entries, {n_awards} awards, {n_projects} projects)")
+    # NOTE: resume.yaml's `leadership`, `scholarships`, and `open_source_contributions`
+    # sections are intentionally NOT rendered into any output file yet — they exist as
+    # human-readable reference only. See TODO.md ("open-source contributions on homepage").
 
     # README.md
     updated, missing = update_readme(data, dry_run=args.dry_run)
@@ -474,10 +477,12 @@ def main():
     if homepage_dir.exists():
         cv_data = build_cv_yml(data)
         resume_data = build_resume_json(data)
+        homepage_files_touched = 0
 
         if args.dry_run:
             print(f"  Would rewrite {cv_yml_path}")
             print(f"  Would rewrite {resume_json_path}")
+            homepage_files_touched += 2
         else:
             cv_yml_path.parent.mkdir(parents=True, exist_ok=True)
             with open(cv_yml_path, "w", encoding="utf-8") as f:
@@ -490,19 +495,22 @@ def main():
                 json.dump(resume_data, f, indent=2, ensure_ascii=False)
                 f.write("\n")
             print(f"  Rewrote {resume_json_path}")
+            homepage_files_touched += 2
 
         about_ok, about_err = update_about_md(data, homepage_dir, dry_run=args.dry_run)
         if about_ok:
             verb = "Would update" if args.dry_run else "Updated"
             print(f"  {verb} about.md <!-- BEGIN:facts --> block")
+            homepage_files_touched += 1
         else:
             print(f"  WARNING: {about_err} — skipped about.md")
     else:
+        homepage_files_touched = 0
         print(f"  WARNING: homepage dir not found ({homepage_dir}) — skipped cv.yml/resume.json/about.md")
 
     print("  NOTE: HaesolShin_Resume.docx is not auto-generated — update it manually against resume.yaml")
 
-    total = len(updated) + (3 if homepage_dir.exists() else 0)
+    total = len(updated) + homepage_files_touched
     verb = "would be updated" if args.dry_run else "updated"
     print(f"Done: {total} file(s) {verb}")
 

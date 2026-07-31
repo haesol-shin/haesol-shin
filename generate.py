@@ -35,6 +35,13 @@ def load_resume():
         return yaml.safe_load(f)
 
 
+def _award_sort_key(award):
+    """Sort by full date descending; entries without an explicit `date` sort
+    to the end of their year (most conservative — no false precision)."""
+    date = award.get("date") or f"{award['year']}-12"
+    return date
+
+
 def in_channel(entry, channel):
     """Return True if `entry` should be shown in `channel`.
     Default (no `channels` key) is to show everywhere."""
@@ -102,9 +109,9 @@ def render_readme_research(data):
 
 def render_readme_awards(data):
     lines = ['<ul>']
-    for award in data.get("awards", []):
-        if not in_channel(award, "readme"):
-            continue
+    awards = [a for a in data.get("awards", []) if in_channel(a, "readme")]
+    awards.sort(key=_award_sort_key, reverse=True)
+    for award in awards:
         lines.append(f'  <li>{award["event"]} — {award["title"]} ({award["org"]})</li>')
     lines.append('</ul>')
     return "\n".join(lines)
@@ -296,9 +303,9 @@ def build_cv_yml(data):
 
     # Awards
     award_contents = []
-    for award in data.get("awards", []):
-        if not in_channel(award, "homepage"):
-            continue
+    awards = [a for a in data.get("awards", []) if in_channel(a, "homepage")]
+    awards.sort(key=_award_sort_key, reverse=True)
+    for award in awards:
         award_contents.append({
             "title": award["title"],
             "institution": award["event"],
@@ -360,7 +367,8 @@ def build_resume_json(data):
         })
 
     awards = []
-    for a in data.get("awards", []):
+    sorted_awards = sorted(data.get("awards", []), key=_award_sort_key, reverse=True)
+    for a in sorted_awards:
         awards.append({
             "title": a["title"],
             "date": str(a["year"]),

@@ -50,11 +50,11 @@
 <h4>🏆 Awards</h4>
 <!-- BEGIN:awards -->
 <ul>
-  <li>2024 Open Source Developers Competition — Student Division — Gold Prize (Director's Award) (Ministry of Science and ICT (MSIT) / NIPA)</li>
-  <li>2025 AI Champion Competition — Selected — Top 100 Teams (Ministry of Science and ICT (MSIT) / IITP)</li>
-  <li>2026 AI Champion Competition — Selected — Top 100 Teams (ongoing) (Ministry of Science and ICT (MSIT) / IITP)</li>
-  <li>Korea Computer Congress (KCC) 2026 — Best Paper Award (Korean Institute of Information Scientists and Engineers (KIISE))</li>
+  <li>2026 AI Champion Competition — Selected — Top 100 Teams (ongoing) (MSIT / IITP)</li>
+  <li>Korea Computer Congress (KCC) 2026 — Best Paper Award (KIISE)</li>
   <li>KT Group Hope Sharing Foundation — Selected — KT Digital Talent Scholarship (KT Corporation)</li>
+  <li>2025 AI Champion Competition — Selected — Top 100 Teams (MSIT / IITP)</li>
+  <li>2024 Open Source Developers Competition — Student Division — Gold Prize (Director's Award) (MSIT / NIPA)</li>
 </ul>
 <!-- END:awards -->
 
